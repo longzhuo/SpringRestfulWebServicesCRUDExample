@@ -36,7 +36,7 @@ public class CountryService {
 	public CountryService() {
 		super();
 		
-		if(countryIdMap==null)
+		if(countryIdMap == null)
 		{
 			countryIdMap = new HashMap<Integer,Country>();
 			System.out.println("\n<<==========业=前 HashMap是否{}: " + countryIdMap);
@@ -47,10 +47,10 @@ public class CountryService {
 			Country bhutanCountry=new Country(2, "Bhutan",7000);
 			
 			
-			countryIdMap.put(1,indiaCountry);
-			countryIdMap.put(4,chinaCountry);
-			countryIdMap.put(3,nepalCountry);
-			countryIdMap.put(2,bhutanCountry);
+			countryIdMap.put(1, indiaCountry);
+			countryIdMap.put(4, chinaCountry);
+			countryIdMap.put(3, nepalCountry);
+			countryIdMap.put(5, bhutanCountry);
 			
 			System.out.println("\n<<==========业=后 HashMap<Integer,实体>: " + countryIdMap);
 		}
@@ -99,16 +99,14 @@ public class CountryService {
 	 	return countryIdMap;
  	}
  
-
- 	
  	// 有点像MySQL字段名id那个auto increment自动增量一样，简写自增，可以不用写id。
  	// Utility method to get max id
 	public static int getMaxId()
 	{   
-		int max=0;
-		for (int id:countryIdMap.keySet()) {  
-			if(max<=id)
-			max=id;
+		int max = 0;
+		for (int id : countryIdMap.keySet()) {  
+			if(max <= id)
+			max = id;
 		
 		}  
 		return max;

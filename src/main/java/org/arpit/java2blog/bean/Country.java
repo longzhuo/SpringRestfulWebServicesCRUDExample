@@ -39,8 +39,8 @@ public class Country{
 	// 转成字符串
 	@Override
 	public String toString() {
-		return "Country [id=" + id + ", countryName=" + countryName
-				+ ", population=" + population + "]";
+		return "Country实体(id=" + id + ", countryName=" + countryName
+				+ ", population=" + population + ")";
 	}
 	
 	
