@@ -27,7 +27,7 @@ public class NewController {
 	NewService newService = new NewService();
 	
 	// GET == R--List（get+实体+s或者ies）
-	@RequestMapping(value = "/news", method = RequestMethod.GET, headers = "Accept=application/json")
+	@RequestMapping(value = "/news", method = RequestMethod.GET, headers = "Accept=application/json;charset=UTF-8")
 	public String getCountries() 
 			throws Exception {
 		
