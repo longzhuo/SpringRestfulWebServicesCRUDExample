@@ -8,6 +8,7 @@ package org.arpit.java2blog.bean;
  **/
 public class New {
 	
+	private int id;
     private String link;
     private String title;
     private String detail;
@@ -26,6 +27,12 @@ public class New {
 		this.date = date;
 	}
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getLink() {
 		return link;
 	}
@@ -59,10 +66,11 @@ public class New {
 	
 	@Override
 	public String toString() {
-		return "New [link=" + link + ", title=" + title + ", detail=" + detail
-				+ ", laiyuan=" + laiyuan + ", date=" + date + "]";
+		return "New [id=" + id + ", link=" + link + ", title=" + title
+				+ ", detail=" + detail + ", laiyuan=" + laiyuan + ", date="
+				+ date + "]";
 	}
-    
+	
 
 }
  
