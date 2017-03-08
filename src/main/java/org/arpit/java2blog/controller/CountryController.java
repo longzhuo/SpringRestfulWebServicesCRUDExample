@@ -29,9 +29,9 @@ public class CountryController {
  * |---------+-----------+------------+---------+---------+-----------------------------------------------------------------------------------|
  * | POST    | add实体          | save实体          | Create  | INSERT  | INSERT INTO 表名(字段名1，字段名2，字段名3，字段名4) VALUE('值1','值2','值3','值4');        |
  * |---------+-----------+------------+---------+---------+-----------------------------------------------------------------------------------|
- * | PUT     | update实体  | Update实体      | Update  | UPDATE  | UPDATE 表名  SET 字段名1='值1',字段名2='值2',字段名3='值3',字段名4='值4' WHERE 字段名id=值;   |
+ * | PUT     | update实体  | update实体      | Update  | UPDATE  | UPDATE 表名  SET 字段名1='值1',字段名2='值2',字段名3='值3',字段名4='值4' WHERE 字段名id=值;   |
  * |---------+-----------+------------+---------+---------+-----------------------------------------------------------------------------------|
- * | DELETE  | delete实体  | Delete实体      | Delete  | DELETE  | DELETE FROM 表名  WHERE 字段名id=值;                                                  |
+ * | DELETE  | del实体          | del实体             | Delete  | DELETE  | DELETE FROM 表名  WHERE 字段名id=值;                                                  |
  * --------------------------------------------------------------------------------------------------------------------------------------------
  * 
  * System.out.println("\n<<----------GET--All==List<实体>: " + listOfCountries);
@@ -51,12 +51,12 @@ public class CountryController {
  * |----------+------------+---------------|
  * | 实体               | update实体     | 实体 对象名               |
  * |----------+------------+---------------|
- * | void     | delete实体     | int id        |
+ * | void     | del实体             | int id        |
  * ------------------------+----------------
  * 
  * */
 	
-	// GET == R--List（get+实体+s或者ies）
+	// GET == R--List（get + 实体 + s或者ies）（query）（read）
 	@RequestMapping(value = "/countries", method = RequestMethod.GET, headers = "Accept=application/json")
 	public List<Country> getCountries() {
 		List<Country> listOfCountries = countryService.getAllCountries();
@@ -64,7 +64,7 @@ public class CountryController {
 		return listOfCountries;
 	}
 
-	// GET == R--ID（get+实体+by+字段名id）
+	// GET == R--ID（get+实体+by+字段名id）（query）（read）
 	@RequestMapping(value = "/country/{id}", method = RequestMethod.GET, headers = "Accept=application/json")
 	public Country getCountryById(@PathVariable int id) {
 		System.out.println("\n<<----------GET--ID =======实体  : " + id);
@@ -72,14 +72,14 @@ public class CountryController {
 		return countryService.getCountry(id);
 	}
 
-	// POST == C（add+实体）
+	// POST == C（add + 实体）（create）（save）
 	@RequestMapping(value = "/countries", method = RequestMethod.POST, headers = "Accept=application/json")
 	public Country addCountry(@RequestBody Country country) {
 		System.out.println("\n>>----------POST===========实体  : " + country);
 		return countryService.addCountry(country);
 	}
 
-	// PUT == U（update+实体）
+	// PUT == U（update + 实体）（modify）（edit）
 	@RequestMapping(value = "/countries", method = RequestMethod.PUT, headers = "Accept=application/json")
 	public Country updateCountry(@RequestBody Country country) {
 		System.out.println("\n>>----------PUT============实体  : " + country);
@@ -87,7 +87,7 @@ public class CountryController {
 
 	}
 
-	// DELETE == D--ID（delete+实体）
+	// DELETE == D--ID（delete + 实体, 或者del + 实体）（remove）
 	@RequestMapping(value = "/country/{id}", method = RequestMethod.DELETE, headers = "Accept=application/json")
 	public void deleteCountry(@PathVariable("id") int id) {
 		System.out.println("\n>>----------DELETE========void : " + id);
