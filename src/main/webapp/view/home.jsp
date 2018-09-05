@@ -51,14 +51,14 @@
     <th>date</th>
 
 </tr>
-<c:forEach items="${news}" var="new">
+<c:forEach items="${news}" var="n">
     <tr>
-        <td>${new.link }</td>
-        <td>${new.title }</td>
-        <td>${new.detail }</td>
-        <td>${new.laiyuan }</td>
-        <td>${new.date }</td>
-       
+        <td>${n.link }</td>
+        <td>${n.title }</td>
+        <td>${n.detail }</td>
+        <td>${n.laiyuan }</td>
+        <td>${n.date }</td>
+
     </tr>
 </c:forEach>
 </table>
